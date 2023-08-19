@@ -1,0 +1,6 @@
+.order {
+  background: url('../../../images/main/order/order_bg.png') no-repeat;
+  background-size: cover;
+
+  overflow: hidden;
+}

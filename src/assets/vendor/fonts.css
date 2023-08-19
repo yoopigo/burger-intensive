@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../vendor/fonts/Gilroy/Gilroy-Semibold.ttf') format ('ttf');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../vendor/fonts/Merriweather/Gilroy-Semibold.ttf') format ('ttf');
+}

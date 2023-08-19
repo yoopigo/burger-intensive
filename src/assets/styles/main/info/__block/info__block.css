@@ -1,0 +1,6 @@
+.info__block {
+  display: flex;
+  flex-direction: column;
+  width: 608px;
+  position: relative;
+}
