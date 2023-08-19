@@ -15,3 +15,9 @@
 .button:hover {
   background: var(--unnamed, linear-gradient(135deg, #ff8307 0%, #b68a11 100%));
 }
+
+.button:disabled {
+  cursor: not-allowed;
+  color: gray;
+  background: #343434;
+}
