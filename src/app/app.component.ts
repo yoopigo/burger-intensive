@@ -12,8 +12,13 @@ export class AppComponent {
   title = 'burger-intensive';
   //Скролл кнопок
 
-  scrollTo(target: HTMLElement) {
+  scrollTo(target: HTMLElement, burger?: any) {
     target.scrollIntoView({ behavior: 'smooth' });
+    if (burger) {
+      this.form.patchValue({
+        order: burger.title + ' (' + burger.price + ' ' + this.currency + ')',
+      });
+    }
   }
 
   constructor(private fb: FormBuilder) {}
@@ -39,6 +44,33 @@ export class AppComponent {
     if (modal) {
       modal.classList.add('visually-hidden');
     }
+  }
+  //Смена валюты
+  currency = '$';
+
+  changeCurrency() {
+    let newCurrency = '$';
+    let coefficient = 1;
+
+    if (this.currency === '$') {
+      newCurrency = '₽';
+      coefficient = 80;
+    } else if (this.currency === '₽') {
+      newCurrency = 'Br';
+      coefficient = 2;
+    } else if (this.currency === 'Br') {
+      newCurrency = '€';
+      coefficient = 0.9;
+    } else if (this.currency === '€') {
+      newCurrency = '¥';
+      coefficient = 6.9;
+    }
+
+    this.currency = newCurrency;
+
+    this.productsData.forEach((item: any) => {
+      item.price = +(item.basePrice * coefficient).toFixed(1);
+    });
   }
 
   productsData = [

@@ -32,8 +32,9 @@
           class="header__currency"
           id="change-currency"
           title="Изменить валюту"
+          (click)="changeCurrency()"
         >
-          <span class="header__currency-symbol">$</span>
+          <span class="header__currency-symbol">{{ currency }}</span>
         </div>
       </div>
     </header>
@@ -130,12 +131,15 @@
           <div class="products__item-extra">
             <div class="products__item-info">
               <p class="products__item-price" data-base-price="8">
-                {{ product.price }} $
+                {{ product.price }} {{ currency }}
               </p>
               <p class="products__item-weight">{{ product.grams }} гр</p>
             </div>
             <div class="products__item-action">
-              <button class="button products__button" (click)="scrollTo(order)">
+              <button
+                class="button products__button"
+                (click)="scrollTo(order, product)"
+              >
                 <span>Заказать</span>
                 <span
                   ><svg
@@ -181,9 +185,10 @@
           >
             <input
               type="text"
-              placeholder="Ваш заказ"
+              placeholder="Выберите товар в списке"
               id="order-burger"
               formControlName="order"
+              readonly
             />
           </div>
           <div
