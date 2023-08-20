@@ -1,0 +1,11 @@
+.header__menu-item-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.header__menu-item-link:hover {
+  border-bottom: 2px solid #fff;
+}
