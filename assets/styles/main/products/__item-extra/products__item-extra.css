@@ -1,0 +1,4 @@
+.products__item-extra {
+  display: flex;
+  justify-content: space-between;
+}

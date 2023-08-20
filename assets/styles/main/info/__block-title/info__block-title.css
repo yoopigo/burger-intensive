@@ -1,0 +1,12 @@
+.info__block-title {
+  font-family: 'Merriweather', sans-serif;
+  font-weight: 900;
+  line-height: 130%;
+  font-size: 120px;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 3.6px;
+  margin-bottom: 56px;
+  z-index: 2;
+  align-self: center;
+}
