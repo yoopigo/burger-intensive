@@ -1,9 +1,0 @@
-.info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
-  padding-top: 102px;
-  padding-bottom: 208px;
-}
