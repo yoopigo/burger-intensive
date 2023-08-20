@@ -177,10 +177,10 @@
         <div class="order__form-inputs" [formGroup]="form">
           <div
             class="order__form-input"
-            [class]="{
+            [ngClass]="{
               error:
-                (form.get('order')?.invalid && form.get('order')?.dirty) ||
-                form.get('order')?.touched
+                form.get('order')?.invalid &&
+                (form.get('order')?.dirty || form.get('order')?.touched)
             }"
           >
             <input
@@ -193,10 +193,10 @@
           </div>
           <div
             class="order__form-input"
-            [class]="{
+            [ngClass]="{
               error:
-                (form.get('name')?.invalid && form.get('name')?.dirty) ||
-                form.get('name')?.touched
+                form.get('name')?.invalid &&
+                (form.get('name')?.dirty || form.get('name')?.touched)
             }"
           >
             <input
@@ -208,10 +208,10 @@
           </div>
           <div
             class="order__form-input"
-            [class]="{
+            [ngClass]="{
               error:
-                (form.get('phone')?.invalid && form.get('phone')?.dirty) ||
-                form.get('phone')?.touched
+                form.get('phone')?.invalid &&
+                (form.get('phone')?.dirty || form.get('phone')?.touched)
             }"
           >
             <input

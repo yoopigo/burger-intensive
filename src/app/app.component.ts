@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent {
     }
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private appService: AppService) {}
 
   form = this.fb.group({
     order: ['', Validators.required],
@@ -31,12 +32,18 @@ export class AppComponent {
 
   confirmOrder() {
     if (this.form.valid) {
-      // Удаление класса с модального окна
-      const modal = document.querySelector('.modal');
-      if (modal) {
-        modal.classList.remove('visually-hidden');
-      }
-      this.form.reset();
+      this.appService.sendOrder(this.form.value).subscribe({
+        next: (response: any) => {
+          const modal = document.querySelector('.modal');
+          if (modal) {
+            modal.classList.remove('visually-hidden');
+          }
+          this.form.reset();
+        },
+        error: (response: any) => {
+          alert(response.error.message);
+        },
+      });
     }
   }
   closeModal() {
@@ -45,6 +52,7 @@ export class AppComponent {
       modal.classList.add('visually-hidden');
     }
   }
+
   //Смена валюты
   currency = '$';
 
