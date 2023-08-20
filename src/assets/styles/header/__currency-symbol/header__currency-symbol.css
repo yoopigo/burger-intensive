@@ -1,8 +1,0 @@
-.header__currency-symbol {
-  display: inline-block;
-  transition: transform 0.3s;
-}
-
-.header__currency:hover .header__currency-symbol {
-  transform: scale(1.7);
-}
