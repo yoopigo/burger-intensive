@@ -119,10 +119,7 @@
       <ul class="products__items">
         <li class="products__item" *ngFor="let product of productsData">
           <div class="products__item-img">
-            <img
-              src="../assets/images/main/products/{{ product.image }}"
-              alt="{{ product.title }}"
-            />
+            <img src="{{ product.image }}" alt="{{ product.title }}" />
           </div>
           <div class="products__item-title">{{ product.title }}</div>
           <p class="products__item-text">
